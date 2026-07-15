@@ -1,2 +1,0 @@
-# Formulir-pendaftaran-OSIS
-Nothing
