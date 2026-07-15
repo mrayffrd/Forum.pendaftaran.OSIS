@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="icon" href="osis.png" type="image/png">
+    <meta name="theme-color" content="#2ecc71">
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran OSIS SMK Islam Krembung 2026-2027</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; padding: 20px; margin: 0; min-height: 100vh; color: white; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.imgur.com/AmDWsRr.jpeg') no-repeat center fixed; background-size: cover; display: flex; align-items: center; justify-content: center; }
+    .box { background: rgba(17, 17, 17, 0.55); padding: 30px; border-radius: 16px; backdrop-filter: blur(12px); width: 100%; max-width: 700px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); border: 1px solid rgba(46, 204, 113, 0.2); }
+    .header { text-align: center; margin-bottom: 20px; }.header img { height: 70px; margin: 0 15px; vertical-align: middle; }
+    .kop { text-align: center; font-size: 12px; line-height: 1.6; margin-bottom: 20px; }
+        h2 { text-align: center; margin-bottom: 5px; font-size: 20px; color: #2ecc71; }.sub { text-align: center; font-size: 13px; color: #aaa; margin-bottom: 25px; }
+        hr { border-color: #444; margin: 20px 0; } label { font-size: 14px; font-weight: 600; margin-top: 15px; display: block; }
+        input, textarea { width: 100%; padding: 12px; margin: 6px 0 12px 0; border-radius: 8px; border: 1px solid #444; background: #1a1a1a; color: white; box-sizing: border-box; font-size: 15px; font-family: 'Inter', sans-serif; transition: 0.3s; }
+        input:focus, textarea:focus { outline: none; border-color: #2ecc71; box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.2); } textarea { min-height: 80px; resize: vertical; }
+    .radio-group { display: flex; gap: 12px; margin: 10px 0 15px 0; }.radio-group input[type="radio"] { display: none; }
+    .radio-group label { padding: 10px 22px; border-radius: 50px; border: 1px solid #444; background: #1a1a1a; color: #aaa; font-weight: 500; cursor: pointer; transition: 0.3s; margin: 0; font-size: 14px; }
+    .radio-group label:hover { border-color: #2ecc71; color: white; }
+    .radio-group input[type="radio"]:checked + label { background: #2ecc71; border-color: #2ecc71; color: #000; font-weight: 700; box-shadow: 0 0 10px rgba(46, 204, 113, 0.4); }
+      #pertanyaan-organisasi { background: rgba(46, 204, 113, 0.05); padding: 15px; border-radius: 10px; border: 1px dashed #2ecc71; margin-bottom: 15px; }
+    .pernyataan { background: rgba(46, 204, 113, 0.1); border-left: 3px solid #2ecc71; padding: 15px; border-radius: 8px; font-size: 13px; margin: 15px 0; line-height: 1.7; }
+        button[type="submit"] { background: #2ecc71; color: #000; border: none; padding: 15px; border-radius: 8px; font-weight: 700; width: 100%; cursor: pointer; font-size: 16px; margin-top: 20px; transition: 0.3s; }
+        button[type="submit"]:hover { background: #27ae60; transform: translateY(-2px); } #status { text-align: center; margin-top: 10px; font-weight: 500; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="header"><img src="https://smkislamkrembung.sch.id/logo.webp" alt="Logo SMK"><img src="https://smansigres.sch.id/wp-content/uploads/2025/06/LOGO-OSIS-.png" alt="Logo OSIS"></div>
+    <div class="kop"><b>LEMBAGA MA'ARIF NU</b><br><b>ORGANISASI SISWA INTRA SEKOLAH</b><br><b>SMK ISLAM KREMBUNG</b><br>Jl. Raya Rejeni, Krembung – Jawa Timur<br>No. Telp (031) 8856988</div>
+    <hr>
+    <h2>FORMULIR PENDAFTARAN CALON PENGURUS OSIS</h2>
+    <p class="sub">SMK Islam Krembung Tahun Ajaran 2026/2027</p>
+
+    <form id="osisForm">
+        <label>• Nama Lengkap</label><input id="nama" placeholder="ISI DENGAN HURUF KAPITAL" required>
+        <label>• Kelas</label><input id="kelas" placeholder="Contoh: X TP 1 / X MP 1 / X TKJ 1" required>
+        <label>• Nomor HP</label><input id="hp" type="tel" placeholder="Contoh: 0851 50xx xxxx" required>
+
+        <label>1. Apakah Anda pernah mengikuti organisasi?</label>
+        <div class="radio-group">
+            <input type="radio" name="pernah" id="ya" value="Ya" required onchange="toggleOrg()"><label for="ya">Ya</label>
+            <input type="radio" name="pernah" id="tidak" value="Tidak" onchange="toggleOrg()"><label for="tidak">Tidak</label>
+        </div>
+
+        <div id="pertanyaan-organisasi" style="display:none;">
+            <label>Sebutkan Organisasi 1</label><input id="org1" placeholder="Contoh: Pramuka">
+            <label>Jabatan di Organisasi 1</label><input id="jabatan1" placeholder="Contoh: Anggota">
+            <label>Masa Bakti Organisasi 1</label><input id="masa1" placeholder="Contoh: 2024-2025">
+            <label>Sebutkan Organisasi 2 - Opsional</label><input id="org2" placeholder="Contoh: PMR">
+            <label>Jabatan di Organisasi 2</label><input id="jabatan2" placeholder="Contoh: Bendahara">
+            <label>Masa Bakti Organisasi 2</label><input id="masa2" placeholder="Contoh: 2025-Sekarang">
+        </div>
+
+        <label>2. Mengapa Anda ingin bergabung menjadi Pengurus OSIS?</label><textarea id="alasan1" required></textarea>
+        <label>3. Seksi Bidang (Sekbid) yang diminati beserta alasannya:</label><textarea id="alasan2" required></textarea>
+
+        <div class="pernyataan"><b>A. Pernyataan Peserta</b><br>1. Bersedia mengikuti seluruh rangkaian rekrutmen...<br>2. Apabila dinyatakan lolos...<br>3. Saya siap menerima segala konsekuensi...</div>
+        <div class="pernyataan"><b>B. Persetujuan Orang Tua/Wali</b><br>Saya selaku orang tua/wali telah mengetahui...</div>
+
+       
+        <!-- TTD UDAH DIHAPUS -->
+        
+        <button type="submit">KIRIM PENDAFTARAN</button>
+        <p id="status"></p>
+    </form>
+</div>
+
+<script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwxDg6t8J8w0CUneYS0k5mNCxaSfTRPtpQ6iWjtW6RD19z8bN2HlgjlORBedeKimndVyg/exec"; // <-- GANTI INI DENGAN URL APPS SCRIPT
+
+    document.getElementById('osisForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    document.getElementById('status').innerText = "⏳ Mengirim data..."; 
+
+    const data = {
+        nama: document.getElementById('nama').value, 
+        kelas: document.getElementById('kelas').value, 
+        hp: document.getElementById('hp').value,
+        pernah: document.querySelector('input[name="pernah"]:checked').value, 
+        org1: document.getElementById('org1').value, 
+        jabatan1: document.getElementById('jabatan1').value, 
+        masa1: document.getElementById('masa1').value,
+        org2: document.getElementById('org2').value, 
+        jabatan2: document.getElementById('jabatan2').value, 
+        masa2: document.getElementById('masa2').value,
+        alasan1: document.getElementById('alasan1').value, 
+        alasan2: document.getElementById('alasan2').value, 
+        };
+
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json(); // ini bakal error kalau no-cors
+
+        if(result.status === "success"){
+            document.getElementById('status').innerText = "✅ Data berhasil dikirim ke Google Sheet!";
+            document.getElementById('status').style.color = "#2ecc71";
+            document.getElementById('osisForm').reset();
+        }
+    } catch (err) {
+        // Kalau gagal, coba pake mode no-cors
+        await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(data), mode: 'no-cors' });
+        document.getElementById('status').innerText = "✅ Data terkirim! Cek Sheet dalam 5 detik";
+        document.getElementById('status').style.color = "#2ecc71";
+        document.getElementById('osisForm').reset();
+    }
+});
+
+    function toggleOrg() { 
+        const ya = document.getElementById('ya').checked; 
+        const box = document.getElementById('pertanyaan-organisasi'); 
+        if (ya) { box.style.display = 'block'; } 
+        else { box.style.display = 'none'; ['org1','jabatan1','masa1','org2','jabatan2','masa2'].forEach(id => document.getElementById(id).value = ""); } 
+    }
+</script>
+</body>
+</html>
